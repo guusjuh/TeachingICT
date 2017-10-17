@@ -10,7 +10,9 @@ void setup()
   particle = new Particle[amount];
   for(int i = 0; i<amount; i++)
   {
-    particle[i] = new Particle(100, 100, 20, 80, 2, 2, color(255,0,0));
+    float dirX = random(-10, 10);
+    float dirY = random(-10, 10); 
+    particle[i] = new Particle(320, 240, 20, 80, dirX, dirY, color(255,0,0));
   }
 }
 
