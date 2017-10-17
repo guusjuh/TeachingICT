@@ -15,8 +15,8 @@ class Particle {
   }
 
   void draw() {
-    xPositie += 1;
-    yPositie += 1;
+    xPositie += xRichting;
+    yPositie += yRichting;
     fill(kleur);
     ellipse(xPositie, yPositie, breedte, hoogte);
   }
