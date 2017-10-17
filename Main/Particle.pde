@@ -43,7 +43,10 @@ class Particle{
     println(deltaTijd);
     Color += color(0, 0, (float)(deltaTijd * 150));
     particleWidth += (float)(deltaTijd * 50);
-    particleHeight += (float)(deltaTijd * 50);
+    particleHeight += (float)(deltaTijd * 50); 
+    directionX *= (1 + deltaTijd * 5); 
+    directionY *= (1 + deltaTijd * 5);
+    
     
     if(levensDuur < verlopenTijd)
     {
