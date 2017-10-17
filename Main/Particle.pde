@@ -1,27 +1,23 @@
-class Particle{
-  color Color;
+class Particle {
+  color kleur;
   float xPositie, yPositie;
-  int particleWidth, particleHeight;
-  float directionX, directionY;
+  int breedte, hoogte;
+  float xRichting, yRichting;
   
-  Particle(int xPositie, int yPositie, int particleWidth, int particleHeight, float directionX, float directionY, color Color){
-    this.xPositie = xPositie;
-    this.yPositie = yPositie;
-    this.particleWidth = particleWidth;
-    this.particleHeight = particleHeight;
-    this.directionX = directionX;
-    this.directionY = directionY;
-    this.Color = Color;
+  Particle() {
+    kleur = color(255, 0, 0);
+    xPositie = 0;
+    yPositie = 0;
+    breedte = 40;
+    hoogte = 40;
+    xRichting = 0;
+    yRichting = 0;
   }
-  
-  void setup(){
-    
-  }
-  
-  void draw(){
-    xPositie += directionX;
-    yPositie += directionY;
-    fill(Color);
-    ellipse(xPositie, yPositie, particleWidth, particleHeight);
+
+  void draw() {
+    xPositie += 1;
+    yPositie += 1;
+    fill(kleur);
+    ellipse(xPositie, yPositie, breedte, hoogte);
   }
 }
