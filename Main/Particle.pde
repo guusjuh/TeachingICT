@@ -1,10 +1,10 @@
 class Particle{
   color Color;
-  int xPositie, yPositie;
+  float xPositie, yPositie;
   int particleWidth, particleHeight;
-  int directionX, directionY;
+  float directionX, directionY;
   
-  Particle(int xPositie, int yPositie, int particleWidth, int particleHeight, int directionX, int directionY, color Color){
+  Particle(float xPositie, float yPositie, int particleWidth, int particleHeight, float directionX, float directionY, color Color){
     this.xPositie = xPositie;
     this.yPositie = yPositie;
     this.particleWidth = particleWidth;
@@ -19,6 +19,7 @@ class Particle{
   }
   
   void draw(){
+    directionY += 0.1f;
     xPositie += directionX;
     yPositie += directionY;
     fill(Color);
