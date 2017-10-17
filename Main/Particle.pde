@@ -1,5 +1,6 @@
 class Particle{
   color Color;
+  color ColorStart;
   int xPositie, yPositie;
   int xPositieStart, yPositieStart;
   int particleWidth, particleHeight;
@@ -19,6 +20,7 @@ class Particle{
     this.directionX = directionX;
     this.directionY = directionY;
     this.Color = Color;
+    this.ColorStart = Color;
     this.levensDuur = levensDuur;
     huidigeTijd = System.currentTimeMillis();
     verlopenTijd = 0;
@@ -33,11 +35,16 @@ class Particle{
     huidigeTijd = System.currentTimeMillis();
     double deltaTijd = (huidigeTijd - vorrigeTijd) * 0.001d;
     verlopenTijd += deltaTijd;
+    
+    println(deltaTijd);
+    Color += color(0, 0, (float)(deltaTijd * 150));
+    
     if(levensDuur < verlopenTijd)
     {
       verlopenTijd = 0;
       xPositie = xPositieStart;
       yPositie = yPositieStart;
+      Color = ColorStart;
     }
     
     xPositie += directionX;
