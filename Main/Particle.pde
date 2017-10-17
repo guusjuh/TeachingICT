@@ -20,6 +20,12 @@ class Particle{
   
   void draw(){
     directionY += 0.1f;
+    if(xPositie + directionX > width - (particleWidth / 2) || xPositie + directionX < 0 + (particleWidth / 2)){
+      directionX = -directionX;
+    }
+    if(yPositie + directionY > height - (particleHeight / 2) || yPositie + directionY < 0 + (particleHeight / 2)){
+      directionY = -directionY;
+    }
     xPositie += directionX;
     yPositie += directionY;
     fill(Color);
