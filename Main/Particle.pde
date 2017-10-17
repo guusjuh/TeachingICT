@@ -1,12 +1,13 @@
 class Particle{
   color Color;
-  int x, y;
-  int size;
+  int xPositie, yPositie;
+  int particleWidth, particleHeight;
   
-  Particle(int x, int y, int size, color Color){
-    this.x = x;
-    this.y = y;
-    this.size = size;
+  Particle(int xPositie, int yPositie, int particleWidth, int particleHeight, color Color){
+    this.xPositie = xPositie;
+    this.yPositie = yPositie;
+    this.particleWidth = particleWidth;
+    this.particleHeight = particleHeight;
     this.Color = Color;
   }
   
@@ -16,7 +17,6 @@ class Particle{
   
   void draw(){
     fill(Color);
-    ellipse(x, y, size, size);
-    
+    ellipse(xPositie, yPositie, particleWidth, particleHeight);
   }
 }
