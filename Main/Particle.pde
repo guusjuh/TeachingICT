@@ -8,6 +8,7 @@ class Particle{
   double vorrigeTijd;
   double huidigeTijd;
   double verlopenTijd;
+  ParticleMini[] particles;
   
   Particle(float xPositie, float yPositie, int particleWidth, int particleHeight, color Color){
     this.xPositie = xPositie;
@@ -18,6 +19,11 @@ class Particle{
     this.particleHeight = particleHeight;
     this.Color = Color;
     huidigeTijd = System.currentTimeMillis();
+    particles = new ParticleMini[5];
+    for(int i = 0; i < particles.length; i++)
+    {
+      particles[i] = new ParticleMini(10, 10, color(0,0,255));
+    }
   }
   
   void setup(){
@@ -48,6 +54,10 @@ class Particle{
     verlopenTijd += deltaTijd;
     if(levensDuur < verlopenTijd)
     {
+      for(int i = 0; i < particles.length; i++)
+      {
+        particles[i].setup(xPositie, yPositie);
+      }
       setup();
     }
     
@@ -55,5 +65,9 @@ class Particle{
     yPositie += directionY;
     fill(Color);
     ellipse(xPositie, yPositie, particleWidth, particleHeight);
+    for(int i = 0; i < particles.length; i++)
+    {
+      particles[i].draw();
+    }
   }
 }
