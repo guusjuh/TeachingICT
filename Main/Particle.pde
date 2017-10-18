@@ -15,8 +15,13 @@ class Particle{
   }
   
   void berekenVerplaatsing(){
-    yRichting += 0.1f;
+    yRichting += 0.1f;//zwaartekracht trekt het object omlaag
     xPositie += xRichting;
     yPositie += yRichting;
+  }
+  
+  void willekeurigePositie(){
+    xPositie = random(0, width);
+    yPositie = random(0, height);
   }
 }

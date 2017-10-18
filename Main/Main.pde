@@ -8,8 +8,7 @@ void setup()
   for(int i = 0; i < particles.length; i++){
     particles[i] = new Particle();
     
-    particles[i].xPositie = width / 2 + 80 * (i-1);
-    particles[i].yPositie = height / 2;
+    particles[i].willekeurigePositie();
     particles[i].breedte = 20;
     particles[i].hoogte = 20;
   }
