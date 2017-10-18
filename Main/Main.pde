@@ -8,9 +8,9 @@ void setup()
   for(int i = 0; i < particles.length; i++){
     particles[i] = new Particle();
     
-    particles[i].willekeurigePositie();
     particles[i].breedte = 20;
     particles[i].hoogte = 20;
+    particles[i].levensduur = 2;
   }
 }
 

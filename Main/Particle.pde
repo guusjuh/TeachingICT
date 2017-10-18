@@ -5,9 +5,17 @@ class Particle{
   float hoogte;
   float xRichting;
   float yRichting;
+  double levensduur;
+  double timer;
   
   void teken(){
-    berekenVerplaatsing();
+    double huidigeTijd = System.currentTimeMillis();
+    if(timer < huidigeTijd)
+    {
+      recycle();
+    }
+
+    berekenVerplaatsing();    
     
     fill(255, 0, 0);
     stroke(0, 0, 255);
@@ -20,8 +28,13 @@ class Particle{
     yPositie += yRichting;
   }
   
-  void willekeurigePositie(){
-    xPositie = random(0, width);
-    yPositie = random(0, height);
+  void recycle(){
+    xPositie = width / 2;
+    yPositie = height / 2;
+    
+    timer = System.currentTimeMillis() + levensduur * 1000;
+    println(timer);
+
+    yRichting = 0;
   }
 }
