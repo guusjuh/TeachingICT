@@ -1,22 +1,15 @@
 class Particle{
-  color Color;
-  int x, y;
-  int size;
+  float xPositie, yPositie;
+  float breedte, hoogte;
   
-  Particle(int x, int y, int size, color Color){
-    this.x = x;
-    this.y = y;
-    this.size = size;
-    this.Color = Color;
+  Particle(float x, float y, float breedteParticle, float hoogteParticle){
+    xPositie = x;
+    yPositie = y;
+    breedte = breedteParticle;
+    hoogte = hoogteParticle;
   }
   
-  void setup(){
-    
-  }
-  
-  void draw(){
-    fill(Color);
-    ellipse(x, y, size, size);
-    
+  void teken(){
+    ellipse(xPositie, yPositie, breedte, hoogte);
   }
 }
