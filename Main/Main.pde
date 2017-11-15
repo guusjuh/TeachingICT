@@ -21,7 +21,10 @@ void draw()
   
   fill(0, 255, 0);
   stroke(0, 255, 0);
-  rect(0, height - 30, width, 30);
+  //rect(xPositie, yPositie, breedte, hoogte)
+  rect(0, 300, 200, 30);
+  //line(xPositieEen, yPositieEen, xPositieTwee, yPositieTwee)
+  line(90,150,80,160);
   
   for(int i = 0; i < particles.length; i++){
     particles[i].teken();
