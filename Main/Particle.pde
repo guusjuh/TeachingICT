@@ -17,9 +17,10 @@ class Particle{
 
     berekenVerplaatsing();    
     
-    fill(255, 0, 0);
-    stroke(0, 0, 255);
+    fill(0, 0, 255);
+    stroke(255, 255, 255);
     ellipse(xPositie, yPositie, breedte, hoogte);
+    ellipse(xPositie, yPositie + hoogte * 1.5f, breedte*2, hoogte*2);
   }
   
   void berekenVerplaatsing(){

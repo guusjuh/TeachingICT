@@ -17,7 +17,7 @@ void setup()
 
 void draw()
 {
-  background(255, 255, 0);
+  background(255, 0, 0);
   
   for(int i = 0; i < particles.length; i++){
     particles[i].teken();
