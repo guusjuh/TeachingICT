@@ -13,7 +13,7 @@ class Particle{
     double huidigeTijd = System.currentTimeMillis();
     if(timer < huidigeTijd)
     {
-      recycle();
+      //recycle();
     }
 
     berekenVerplaatsing();    
@@ -30,8 +30,8 @@ class Particle{
   }
   
   void recycle(){
-    xPositie = width / 2;
-    yPositie = height / 2;
+    xPositie = mouseX;
+    yPositie = mouseY;
     
     //stel de tijdswaarde in voor wanneer de timer afgelopen is. dit is te brekenen door te kijken naar de huidige tijd en daar de gewenste tijd bij op te tellen. 
     //dit getal is in milliseconden. hierdoor moeten we de levensduur die in seconden is vermenigvuldigen met 1000
@@ -40,7 +40,6 @@ class Particle{
 
     xRichting = random(-2,2);
     yRichting = random(-5, -1);
-    float random = random(0, 2);
     if(abs(xRichting) >= 1){
       kleur = color(255, 0, 0);
     }
