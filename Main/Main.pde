@@ -10,6 +10,7 @@ void setup()
     
     particles[i].breedte = 20;
     particles[i].hoogte = 20;
+    //stel in hoeveel seconden het object actief blijft
     particles[i].levensduur = 2;
   }
 }

@@ -32,9 +32,12 @@ class Particle{
     xPositie = width / 2;
     yPositie = height / 2;
     
+    //stel de tijdswaarde in voor wanneer de timer afgelopen is. dit is te brekenen door te kijken naar de huidige tijd en daar de gewenste tijd bij op te tellen. 
+    //dit getal is in milliseconden. hierdoor moeten we de levensduur die in seconden is vermenigvuldigen met 1000
     timer = System.currentTimeMillis() + levensduur * 1000;
     println(timer);
 
+    xRichting = 0;
     yRichting = 0;
   }
 }
