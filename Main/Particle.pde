@@ -7,6 +7,7 @@ class Particle{
   float yRichting;
   double levensduur;
   double timer;
+  color kleur;
   
   void teken(){
     double huidigeTijd = System.currentTimeMillis();
@@ -17,19 +18,13 @@ class Particle{
 
     berekenVerplaatsing();    
     
-    fill(0, 0, 255);
-    stroke(255, 255, 255);
-    rectMode(CENTER);
-    rect(xPositie,yPositie,20,100);
-    ellipse(xPositie,yPositie-30,60,60);
-    ellipse(xPositie-19,yPositie-30,16,32); 
-    ellipse(xPositie+19,yPositie-30,16,32); 
-    line(xPositie-10,yPositie+50,xPositie-20,yPositie+60);
-    line(xPositie+10,yPositie+50,xPositie+20,yPositie+60);
+    fill(kleur);
+    stroke(kleur);
+    ellipse(xPositie, yPositie, breedte, hoogte);
   }
   
   void berekenVerplaatsing(){
-    yRichting += 0.1f;//zwaartekracht trekt het object omlaag
+    //yRichting += 0.1f;//zwaartekracht trekt het object omlaag
     xPositie += xRichting;
     yPositie += yRichting;
   }
@@ -43,7 +38,14 @@ class Particle{
     timer = System.currentTimeMillis() + levensduur * 1000;
     println(timer);
 
-    xRichting = random(-10,10);
-    yRichting = random(-10,10);
+    xRichting = random(-2,2);
+    yRichting = random(-5, -1);
+    float random = random(0, 2);
+    if(abs(xRichting) >= 1){
+      kleur = color(255, 0, 0);
+    }
+    else{
+      kleur = color(255, 165, 0);
+    }
   }
 }
