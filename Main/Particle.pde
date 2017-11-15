@@ -19,7 +19,13 @@ class Particle{
     
     fill(0, 0, 255);
     stroke(255, 255, 255);
-    rect(xPositie, yPositie, breedte, hoogte);
+    rectMode(CENTER);
+    rect(xPositie,yPositie,20,100);
+    ellipse(xPositie,yPositie-30,60,60);
+    ellipse(xPositie-19,yPositie-30,16,32); 
+    ellipse(xPositie+19,yPositie-30,16,32); 
+    line(xPositie-10,yPositie+50,xPositie-20,yPositie+60);
+    line(xPositie+10,yPositie+50,xPositie+20,yPositie+60);
   }
   
   void berekenVerplaatsing(){
@@ -37,7 +43,7 @@ class Particle{
     timer = System.currentTimeMillis() + levensduur * 1000;
     println(timer);
 
-    xRichting = 0;
-    yRichting = 0;
+    xRichting = random(-10,10);
+    yRichting = random(-10,10);
   }
 }
