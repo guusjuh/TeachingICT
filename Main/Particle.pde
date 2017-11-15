@@ -13,6 +13,8 @@ class Particle{
     double huidigeTijd = System.currentTimeMillis();
     if(timer < huidigeTijd)
     {
+      xPositie = -10;
+      yPositie = -10;
       //recycle();
     }
 
